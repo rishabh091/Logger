@@ -1,30 +1,41 @@
 package file.saveLogs;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class SaveInFile {
 
-    private String location;
-    private String fileType;
+    private ArrayList<String> location;
+    private ArrayList<String> fileType;
+
+    private final String error="Error in the logger.json, Please add proper constraints";
 
     public SaveInFile() throws IOException {
+        location=new ArrayList<>();
+        fileType=new ArrayList<>();
+
         getLocationFromUser();
     }
 
     public String saveData(String data) throws IOException{
-        FileWriter fileWriter=new FileWriter(location+"."+fileType,true);
-        BufferedWriter bufferedWriter=new BufferedWriter(fileWriter);
+        String result=error;
 
-        if(this.fileType.equals("txt")
-        || this.fileType.equals("doc")
-        || this.fileType.equals("docx")){
-            return saveDataAsTxtOrDocOrDocx(bufferedWriter,data);
+        for(int i = 0; i<this.location.size() && i<this.fileType.size(); i++){
+            FileWriter fileWriter=new FileWriter(location.get(i)+"."+fileType.get(i),true);
+            BufferedWriter bufferedWriter=new BufferedWriter(fileWriter);
+
+            if(this.fileType.get(i).equals("txt")){
+                result=saveDataAsTxtOrDocOrDocx(bufferedWriter,data);
+            }
+            else{
+                result=saveDataAsHTML(bufferedWriter,data);
+            }
         }
-        else{
-            return saveDataAsHTML(bufferedWriter,data);
-        }
+
+        return result;
     }
 
     private String saveDataAsHTML(BufferedWriter bufferedWriter,String data) throws IOException{
@@ -59,8 +70,13 @@ public class SaveInFile {
             stringBuilder.append(line);
         }
 
-        JSONObject jsonObject=new JSONObject(stringBuilder.toString());
-        this.fileType=jsonObject.getString(typeString);
-        this.location=jsonObject.getString(configLocation);
+        JSONArray jsonArray=new JSONArray(stringBuilder.toString());
+        for(int i=0;i<jsonArray.length();i++){
+            JSONObject jsonObject=jsonArray.getJSONObject(i);
+
+            location.add(jsonObject.getString(configLocation));
+            fileType.add(jsonObject.getString(typeString));
+        }
+
     }
 }
