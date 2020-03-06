@@ -11,8 +11,6 @@ public class SaveInFile {
     private ArrayList<String> location;
     private ArrayList<String> fileType;
 
-    private final String error="Error in the logger.json, Please add proper constraints";
-
     public SaveInFile() throws IOException {
         location=new ArrayList<>();
         fileType=new ArrayList<>();
@@ -21,10 +19,10 @@ public class SaveInFile {
     }
 
     public String saveData(String data) throws IOException{
-        String result=error;
+        String result="";
 
-        for(int i = 0; i<this.location.size() && i<this.fileType.size(); i++){
-            FileWriter fileWriter=new FileWriter(location.get(i)+"."+fileType.get(i),true);
+        for(int i = 0; i<this.location.size(); i++){
+            FileWriter fileWriter=new FileWriter(this.location.get(i)+"."+this.fileType.get(i),true);
             BufferedWriter bufferedWriter=new BufferedWriter(fileWriter);
 
             if(this.fileType.get(i).equals("txt")){
@@ -74,9 +72,8 @@ public class SaveInFile {
         for(int i=0;i<jsonArray.length();i++){
             JSONObject jsonObject=jsonArray.getJSONObject(i);
 
-            location.add(jsonObject.getString(configLocation));
-            fileType.add(jsonObject.getString(typeString));
+            this.location.add(jsonObject.getString(configLocation));
+            this.fileType.add(jsonObject.getString(typeString));
         }
-
     }
 }

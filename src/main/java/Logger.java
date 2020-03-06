@@ -12,8 +12,8 @@ public class Logger {
         try{
             consolePrint=new ConsolePrint();
         }
-        catch (Exception e){
-            System.err.println("Config file not found, create a custom config file with the name of 'logger.json' in resources");
+        catch (IOException e){
+            System.err.println(e);
         }
     }
 
