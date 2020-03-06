@@ -1,3 +1,4 @@
 {
-  "logger.location" : "E:\\Java\\Maven Projects\\Logger\\logs.txt"
+  "logger.location" : "E:\\Java\\Maven Projects\\Logger\\logTest",
+  "logger.fileType" : "html"
 }

@@ -39,7 +39,7 @@ public class ConsolePrint {
 
             stringBuilder.append(arr[i]).append(" ");
         }
-        stringBuilder.append(saveInFile.saveDataAsTxt(stringBuilder.toString()));
+        stringBuilder.append(saveInFile.saveData(stringBuilder.toString()));
         stringBuilder.append("\n");
 
         bufferedWriter.write(stringBuilder.toString());

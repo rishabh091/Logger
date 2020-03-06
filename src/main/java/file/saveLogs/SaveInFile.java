@@ -6,26 +6,49 @@ import java.io.*;
 
 public class SaveInFile {
 
-    private final String location;
+    private String location;
+    private String fileType;
 
     public SaveInFile() throws IOException {
-        this.location=getLocationFromUser();
+        getLocationFromUser();
     }
 
-    public String saveDataAsTxt(String str) throws IOException {
-        FileWriter fileWriter=new FileWriter(location,true);
+    public String saveData(String data) throws IOException{
+        FileWriter fileWriter=new FileWriter(location+"."+fileType,true);
         BufferedWriter bufferedWriter=new BufferedWriter(fileWriter);
 
+        if(this.fileType.equals("txt")
+        || this.fileType.equals("doc")
+        || this.fileType.equals("docx")){
+            return saveDataAsTxtOrDocOrDocx(bufferedWriter,data);
+        }
+        else{
+            return saveDataAsHTML(bufferedWriter,data);
+        }
+    }
+
+    private String saveDataAsHTML(BufferedWriter bufferedWriter,String data) throws IOException{
+        bufferedWriter.append("<p>");
+        bufferedWriter.append(data);
+        bufferedWriter.append("</p>");
+
+        bufferedWriter.flush();
+
+        return "Logs stored in "+location;
+    }
+
+    private String saveDataAsTxtOrDocOrDocx(BufferedWriter bufferedWriter,String data) throws IOException {
         bufferedWriter.newLine();
-        bufferedWriter.append(str);
+        bufferedWriter.append(data);
         bufferedWriter.flush();
 
         return " Logs stored in "+location;
     }
 
-    private String getLocationFromUser() throws IOException {
+    private void getLocationFromUser() throws IOException {
         final String configFile = "/logger.json";
         final String configLocation = "logger.location";
+        final String typeString="logger.fileType";
 
         InputStream inputStream= SaveInFile.class.getResourceAsStream(configFile);
         BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(inputStream));
@@ -37,7 +60,7 @@ public class SaveInFile {
         }
 
         JSONObject jsonObject=new JSONObject(stringBuilder.toString());
-
-        return jsonObject.getString(configLocation);
+        this.fileType=jsonObject.getString(typeString);
+        this.location=jsonObject.getString(configLocation);
     }
 }
