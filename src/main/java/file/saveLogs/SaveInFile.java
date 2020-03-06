@@ -21,6 +21,7 @@ public class SaveInFile {
     public String saveData(String data) throws IOException{
         String result="";
 
+        //reading every location and then appending the files present there
         for(int i = 0; i<this.location.size(); i++){
             FileWriter fileWriter=new FileWriter(this.location.get(i)+"."+this.fileType.get(i),true);
             BufferedWriter bufferedWriter=new BufferedWriter(fileWriter);
@@ -54,6 +55,7 @@ public class SaveInFile {
         return " Logs stored in "+location;
     }
 
+    //a simple function to get logger.json created in resources folder
     private void getLocationFromUser() throws IOException {
         final String configFile = "/logger.json";
         final String configLocation = "logger.location";

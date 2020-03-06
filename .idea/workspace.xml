@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98773dbc-7028-47fc-85d9-57a63611a127" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Logger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/file/saveLogs/SaveInFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/file/saveLogs/SaveInFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/file/saveLogs/SaveInFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/file/saveLogs/SaveInFile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/logger.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logger.json" afterDir="false" />
-    </list>
+    <list default="true" id="98773dbc-7028-47fc-85d9-57a63611a127" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +79,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583473193762</updated>
-      <workItem from="1583473203368" duration="13372000" />
+      <workItem from="1583473203368" duration="13570000" />
     </task>
     <servers />
   </component>
@@ -101,22 +95,22 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1583498726413" />
-    <state width="1323" height="182" key="GridCell.Tab.0.bottom" timestamp="1583501737130">
+    <state width="1323" height="182" key="GridCell.Tab.0.bottom" timestamp="1583501840474">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1583501737130" />
-    <state width="1323" height="182" key="GridCell.Tab.0.center" timestamp="1583501737129">
+    <state width="1323" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1583501840474" />
+    <state width="1323" height="182" key="GridCell.Tab.0.center" timestamp="1583501840474">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1583501737129" />
-    <state width="1323" height="182" key="GridCell.Tab.0.left" timestamp="1583501737129">
+    <state width="1323" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1583501840474" />
+    <state width="1323" height="182" key="GridCell.Tab.0.left" timestamp="1583501840474">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1583501737129" />
-    <state width="1323" height="182" key="GridCell.Tab.0.right" timestamp="1583501737129">
+    <state width="1323" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1583501840474" />
+    <state width="1323" height="182" key="GridCell.Tab.0.right" timestamp="1583501840474">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1583501737129" />
+    <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1583501840474" />
     <state width="1323" height="227" key="GridCell.Tab.1.bottom" timestamp="1583500772554">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

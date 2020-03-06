@@ -21,12 +21,13 @@ public class ConsolePrint {
     }
 
     public void consolePrint(Object[] arr,String logType) throws IOException {
-        //getTime
+        //will get current Time
         Time time=new Time();
         stringBuilder=new StringBuilder();
 
         stringBuilder.append(time.getCurrentTime()).append(" ").append(logType).append(" ");
 
+        //logic to replace {} with the next parameter only if the next parameter is not string
         for(int i=0;i<arr.length;i++){
             if(i != arr.length-1){
                 if(arr[i].getClass().getName().equals(stringClassName)){
@@ -39,6 +40,7 @@ public class ConsolePrint {
 
             stringBuilder.append(arr[i]).append(" ");
         }
+        //this will also save logs to the files
         stringBuilder.append(saveInFile.saveData(stringBuilder.toString()));
         stringBuilder.append("\n");
 
