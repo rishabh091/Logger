@@ -9,7 +9,12 @@ public class Logger {
     private static final String errorType="error";
 
     public Logger(){
-        consolePrint=new ConsolePrint();
+        try{
+            consolePrint=new ConsolePrint();
+        }
+        catch (Exception e){
+            System.err.println("Config file not found, create a custom config file with the name of 'logger.json' in resources");
+        }
     }
 
     public void log(Object... objects){

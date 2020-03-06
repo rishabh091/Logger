@@ -1,5 +1,6 @@
 package console.print;
 
+import file.saveLogs.SaveInFile;
 import time.Time;
 
 import java.io.BufferedWriter;
@@ -10,11 +11,13 @@ public class ConsolePrint {
 
     private BufferedWriter bufferedWriter;
     private StringBuilder stringBuilder;
+    private SaveInFile saveInFile;
 
     private final String stringClassName="java.lang.String";
 
-    public ConsolePrint(){
+    public ConsolePrint() throws IOException {
         bufferedWriter=new BufferedWriter(new OutputStreamWriter(System.out));
+        saveInFile=new SaveInFile();
     }
 
     public void consolePrint(Object[] arr,String logType) throws IOException {
@@ -36,6 +39,7 @@ public class ConsolePrint {
 
             stringBuilder.append(arr[i]).append(" ");
         }
+        stringBuilder.append(saveInFile.saveDataAsTxt(stringBuilder.toString()));
         stringBuilder.append("\n");
 
         bufferedWriter.write(stringBuilder.toString());
